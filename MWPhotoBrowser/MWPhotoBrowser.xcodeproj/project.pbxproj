@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		076E5F2A17695DAF0029E472 /* MWProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 076E5F2817695DAF0029E472 /* MWProgressHUD.h */; };
+		076E5F2B17695DAF0029E472 /* MWProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 076E5F2917695DAF0029E472 /* MWProgressHUD.m */; };
 		0EA380331573EA4B003F4582 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA380321573EA4B003F4582 /* ImageIO.framework */; };
 		4C6F96C814AF704100F8389A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C6F96C714AF704100F8389A /* Foundation.framework */; };
 		4C6F96E214AF70BD00F8389A /* MWCaptionView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6F96D614AF70BD00F8389A /* MWCaptionView.h */; };
@@ -21,8 +23,6 @@
 		4C6F96EB14AF70BD00F8389A /* MWTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F96DF14AF70BD00F8389A /* MWTapDetectingView.m */; };
 		4C6F96EC14AF70BD00F8389A /* MWZoomingScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6F96E014AF70BD00F8389A /* MWZoomingScrollView.h */; };
 		4C6F96ED14AF70BD00F8389A /* MWZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F96E114AF70BD00F8389A /* MWZoomingScrollView.m */; };
-		4C6F96F614AF710800F8389A /* MBProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6F96F414AF710800F8389A /* MBProgressHUD.h */; };
-		4C6F96F714AF710800F8389A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F96F514AF710800F8389A /* MBProgressHUD.m */; };
 		4C6F970A14AF711300F8389A /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6F96F814AF711300F8389A /* SDImageCache.h */; };
 		4C6F970B14AF711300F8389A /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6F96F914AF711300F8389A /* SDImageCache.m */; };
 		4C6F970C14AF711300F8389A /* SDImageCacheDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C6F96FA14AF711300F8389A /* SDImageCacheDelegate.h */; };
@@ -46,6 +46,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		076E5F2817695DAF0029E472 /* MWProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWProgressHUD.h; path = Classes/MWProgressHUD.h; sourceTree = SOURCE_ROOT; };
+		076E5F2917695DAF0029E472 /* MWProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWProgressHUD.m; path = Classes/MWProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		0EA380321573EA4B003F4582 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		4C6F96C414AF704100F8389A /* libMWPhotoBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMWPhotoBrowser.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6F96C714AF704100F8389A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,8 +65,6 @@
 		4C6F96E014AF70BD00F8389A /* MWZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MWZoomingScrollView.h; path = Classes/MWZoomingScrollView.h; sourceTree = SOURCE_ROOT; };
 		4C6F96E114AF70BD00F8389A /* MWZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MWZoomingScrollView.m; path = Classes/MWZoomingScrollView.m; sourceTree = SOURCE_ROOT; };
 		4C6F96EF14AF70DC00F8389A /* MWPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MWPhotoBrowser.bundle; sourceTree = SOURCE_ROOT; };
-		4C6F96F414AF710800F8389A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Libraries/MBProgressHUD/MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
-		4C6F96F514AF710800F8389A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Libraries/MBProgressHUD/MBProgressHUD.m; sourceTree = SOURCE_ROOT; };
 		4C6F96F814AF711300F8389A /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = Libraries/SDWebImage/SDImageCache.h; sourceTree = SOURCE_ROOT; };
 		4C6F96F914AF711300F8389A /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = Libraries/SDWebImage/SDImageCache.m; sourceTree = SOURCE_ROOT; };
 		4C6F96FA14AF711300F8389A /* SDImageCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDImageCacheDelegate.h; path = Libraries/SDWebImage/SDImageCacheDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -155,6 +155,8 @@
 				4C6F96DF14AF70BD00F8389A /* MWTapDetectingView.m */,
 				4C6F96E014AF70BD00F8389A /* MWZoomingScrollView.h */,
 				4C6F96E114AF70BD00F8389A /* MWZoomingScrollView.m */,
+				076E5F2817695DAF0029E472 /* MWProgressHUD.h */,
+				076E5F2917695DAF0029E472 /* MWProgressHUD.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -162,7 +164,6 @@
 		4C6F96F014AF70E800F8389A /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				4C6F96F214AF70FA00F8389A /* MBProgressHUD (3d5c3cc) */,
 				4C6F96F114AF70F500F8389A /* SDWebImage (b357e82) */,
 			);
 			name = Libraries;
@@ -193,15 +194,6 @@
 			name = "SDWebImage (b357e82)";
 			sourceTree = "<group>";
 		};
-		4C6F96F214AF70FA00F8389A /* MBProgressHUD (3d5c3cc) */ = {
-			isa = PBXGroup;
-			children = (
-				4C6F96F414AF710800F8389A /* MBProgressHUD.h */,
-				4C6F96F514AF710800F8389A /* MBProgressHUD.m */,
-			);
-			name = "MBProgressHUD (3d5c3cc)";
-			sourceTree = "<group>";
-		};
 		4C6F97E114AF7CCE00F8389A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,7 +216,6 @@
 				4C6F96E814AF70BD00F8389A /* MWTapDetectingImageView.h in Headers */,
 				4C6F96EA14AF70BD00F8389A /* MWTapDetectingView.h in Headers */,
 				4C6F96EC14AF70BD00F8389A /* MWZoomingScrollView.h in Headers */,
-				4C6F96F614AF710800F8389A /* MBProgressHUD.h in Headers */,
 				4C6F970A14AF711300F8389A /* SDImageCache.h in Headers */,
 				4C6F970C14AF711300F8389A /* SDImageCacheDelegate.h in Headers */,
 				4C6F970D14AF711300F8389A /* SDWebImageCompat.h in Headers */,
@@ -237,6 +228,7 @@
 				4C6F971814AF711300F8389A /* UIButton+WebCache.h in Headers */,
 				4C6F971A14AF711300F8389A /* UIImageView+WebCache.h in Headers */,
 				4CB08BA314B1F38700730E9F /* MWPhotoProtocol.h in Headers */,
+				076E5F2A17695DAF0029E472 /* MWProgressHUD.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +288,6 @@
 				4C6F96E914AF70BD00F8389A /* MWTapDetectingImageView.m in Sources */,
 				4C6F96EB14AF70BD00F8389A /* MWTapDetectingView.m in Sources */,
 				4C6F96ED14AF70BD00F8389A /* MWZoomingScrollView.m in Sources */,
-				4C6F96F714AF710800F8389A /* MBProgressHUD.m in Sources */,
 				4C6F970B14AF711300F8389A /* SDImageCache.m in Sources */,
 				4C6F970F14AF711300F8389A /* SDWebImageDecoder.m in Sources */,
 				4C6F971114AF711300F8389A /* SDWebImageDownloader.m in Sources */,
@@ -304,6 +295,7 @@
 				4C6F971714AF711300F8389A /* SDWebImagePrefetcher.m in Sources */,
 				4C6F971914AF711300F8389A /* UIButton+WebCache.m in Sources */,
 				4C6F971B14AF711300F8389A /* UIImageView+WebCache.m in Sources */,
+				076E5F2B17695DAF0029E472 /* MWProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

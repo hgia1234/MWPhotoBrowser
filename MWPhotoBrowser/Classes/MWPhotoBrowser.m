@@ -9,7 +9,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MWPhotoBrowser.h"
 #import "MWZoomingScrollView.h"
-#import "MBProgressHUD.h"
+#import "MWProgressHUD.h"
 #import "SDImageCache.h"
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
@@ -44,7 +44,7 @@
 	NSTimer *_controlVisibilityTimer;
 	UIBarButtonItem *_previousButton, *_nextButton, *_actionButton;
     UIActionSheet *_actionsSheet;
-    MBProgressHUD *_progressHUD;
+    MWProgressHUD *_progressHUD;
     
     // Appearance
     UIImage *_navigationBarBackgroundImageDefault, 
@@ -68,7 +68,7 @@
 @property (nonatomic, retain) UIBarButtonItem *previousViewControllerBackButton;
 @property (nonatomic, retain) UIImage *navigationBarBackgroundImageDefault, *navigationBarBackgroundImageLandscapePhone;
 @property (nonatomic, retain) UIActionSheet *actionsSheet;
-@property (nonatomic, retain) MBProgressHUD *progressHUD;
+@property (nonatomic, retain) MWProgressHUD *progressHUD;
 
 // Private Methods
 
@@ -1041,11 +1041,9 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 
 #pragma mark - MBProgressHUD
 
-- (MBProgressHUD *)progressHUD {
+- (MWProgressHUD *)progressHUD {
     if (!_progressHUD) {
-        _progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
-        _progressHUD.minSize = CGSizeMake(120, 120);
-        _progressHUD.minShowTime = 1;
+        _progressHUD = [[MWProgressHUD alloc] initInView:self.view];
         // The sample image is based on the
         // work by: http://www.pixelpressicons.com
         // licence: http://creativecommons.org/licenses/by/2.5/ca/
@@ -1056,25 +1054,23 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 }
 
 - (void)showProgressHUDWithMessage:(NSString *)message {
-    self.progressHUD.labelText = message;
-    self.progressHUD.mode = MBProgressHUDModeIndeterminate;
-    [self.progressHUD show:YES];
+    self.progressHUD.label.text = message;
+    [self.progressHUD show];
     self.navigationController.navigationBar.userInteractionEnabled = NO;
 }
 
 - (void)hideProgressHUD:(BOOL)animated {
-    [self.progressHUD hide:animated];
+    [self.progressHUD hide];
     self.navigationController.navigationBar.userInteractionEnabled = YES;
 }
 
 - (void)showProgressHUDCompleteMessage:(NSString *)message {
     if (message) {
-        if (self.progressHUD.isHidden) [self.progressHUD show:YES];
-        self.progressHUD.labelText = message;
-        self.progressHUD.mode = MBProgressHUDModeCustomView;
-        [self.progressHUD hide:YES afterDelay:1.5];
+        [self.progressHUD showCustomView];
+        self.progressHUD.label.text = message;
+        [self.progressHUD performSelector:@selector(hide) withObject:nil afterDelay:1.5];
     } else {
-        [self.progressHUD hide:YES];
+        [self.progressHUD hide];
     }
     self.navigationController.navigationBar.userInteractionEnabled = YES;
 }
