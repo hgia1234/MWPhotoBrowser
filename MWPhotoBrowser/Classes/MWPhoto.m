@@ -26,7 +26,7 @@
 }
 
 // Properties
-@property (nonatomic, retain) UIImage *underlyingImage;
+@property (nonatomic, strong) UIImage *underlyingImage;
 
 // Methods
 - (void)imageDidFinishLoadingSoDecompress;
@@ -79,12 +79,7 @@ caption = _caption;
 }
 
 - (void)dealloc {
-    [_caption release];
     [[SDWebImageManager sharedManager] cancelForDelegate:self];
-	[_photoPath release];
-	[_photoURL release];
-	[_underlyingImage release];
-	[super dealloc];
 }
 
 #pragma mark MWPhoto Protocol Methods

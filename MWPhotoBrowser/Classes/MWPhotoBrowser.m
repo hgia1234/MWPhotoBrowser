@@ -64,11 +64,11 @@
 }
 
 // Private Properties
-@property (nonatomic, retain) UIColor *previousNavBarTintColor;
-@property (nonatomic, retain) UIBarButtonItem *previousViewControllerBackButton;
-@property (nonatomic, retain) UIImage *navigationBarBackgroundImageDefault, *navigationBarBackgroundImageLandscapePhone;
-@property (nonatomic, retain) UIActionSheet *actionsSheet;
-@property (nonatomic, retain) MWProgressHUD *progressHUD;
+@property (nonatomic, strong) UIColor *previousNavBarTintColor;
+@property (nonatomic, strong) UIBarButtonItem *previousViewControllerBackButton;
+@property (nonatomic, strong) UIImage *navigationBarBackgroundImageDefault, *navigationBarBackgroundImageLandscapePhone;
+@property (nonatomic, strong) UIActionSheet *actionsSheet;
+@property (nonatomic, strong) MWProgressHUD *progressHUD;
 
 // Private Methods
 
@@ -177,30 +177,15 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 
 - (id)initWithPhotos:(NSArray *)photosArray {
 	if ((self = [self init])) {
-		_depreciatedPhotoData = [photosArray retain];
+		_depreciatedPhotoData = photosArray;
 	}
 	return self;
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [_previousNavBarTintColor release];
-    [_navigationBarBackgroundImageDefault release];
-    [_navigationBarBackgroundImageLandscapePhone release];
-    [_previousViewControllerBackButton release];
-	[_pagingScrollView release];
-	[_visiblePages release];
-	[_recycledPages release];
-	[_toolbar release];
-	[_previousButton release];
-	[_nextButton release];
-    [_actionButton release];
-  	[_depreciatedPhotoData release];
     [self releaseAllUnderlyingPhotos];
     [[SDImageCache sharedImageCache] clearMemory]; // clear memory
-    [_photos release];
-    [_progressHUD release];
-    [super dealloc];
 }
 
 - (void)releaseAllUnderlyingPhotos {
@@ -291,7 +276,6 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
     [items addObject:flexSpace];
     if (_displayActionButton) [items addObject:_actionButton];
     [_toolbar setItems:items];
-    [items release];
 	[self updateNavigation];
     
     // Navigation buttons
@@ -336,12 +320,12 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 // Release any retained subviews of the main view.
 - (void)viewDidUnload {
 	_currentPageIndex = 0;
-    [_pagingScrollView release], _pagingScrollView = nil;
-    [_visiblePages release], _visiblePages = nil;
-    [_recycledPages release], _recycledPages = nil;
-    [_toolbar release], _toolbar = nil;
-    [_previousButton release], _previousButton = nil;
-    [_nextButton release], _nextButton = nil;
+    _pagingScrollView = nil;
+    _visiblePages = nil;
+    _recycledPages = nil;
+    _toolbar = nil;
+    _previousButton = nil;
+    _nextButton = nil;
     self.progressHUD = nil;
     [super viewDidUnload];
 }
@@ -953,7 +937,6 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 	// If a timer exists then cancel and release
 	if (_controlVisibilityTimer) {
 		[_controlVisibilityTimer invalidate];
-		[_controlVisibilityTimer release];
 		_controlVisibilityTimer = nil;
 	}
 }
@@ -962,7 +945,7 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
 - (void)hideControlsAfterDelay {
 	if (![self areControlsHidden]) {
         [self cancelControlHiding];
-		_controlVisibilityTimer = [[NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(hideControls) userInfo:nil repeats:NO] retain];
+		_controlVisibilityTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(hideControls) userInfo:nil repeats:NO];
 	}
 }
 
@@ -1132,7 +1115,6 @@ navigationBarBackgroundImageLandscapePhone = _navigationBarBackgroundImageLandsc
             emailer.modalPresentationStyle = UIModalPresentationPageSheet;
         }
         [self presentModalViewController:emailer animated:YES];
-        [emailer release];
         [self hideProgressHUD:NO];
     }
 }

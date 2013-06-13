@@ -17,7 +17,7 @@ NSString *const SDWebImageDownloadStartNotification = @"SDWebImageDownloadStartN
 NSString *const SDWebImageDownloadStopNotification = @"SDWebImageDownloadStopNotification";
 
 @interface SDWebImageDownloader ()
-@property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic, strong) NSURLConnection *connection;
 @end
 
 @implementation SDWebImageDownloader
@@ -159,7 +159,7 @@ NSString *const SDWebImageDownloadStopNotification = @"SDWebImageDownloadStopNot
 
         // Update the data source, we must pass ALL the data, not just the new bytes
         CGImageSourceRef imageSource = CGImageSourceCreateIncremental(NULL);
-        CGImageSourceUpdateData(imageSource, ( CFDataRef)imageData, totalSize == expectedSize);
+        CGImageSourceUpdateData(imageSource, ( CFDataRef)CFBridgingRetain(imageData), totalSize == expectedSize);
 
         if (width + height == 0)
         {
