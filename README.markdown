@@ -1,3 +1,6 @@
+
+
+
 # MWPhotoBrowser — A simple iOS photo browser
 
 MWPhotoBrowser is an implementation of a photo browser similar to the native Photos app in iOS. It can display one or more images by providing either `UIImage` objects, file paths to images on the device, or URLs to images online. The photo browser handles the downloading and caching of photos from the web seamlessly. Photos can be zoomed and panned, and optional (customisable) captions can be displayed. Works on iOS 3.2+. All strings are localisable so they can be used in apps that support multiple languages.
@@ -12,6 +15,9 @@ MWPhotoBrowser is an implementation of a photo browser similar to the native Pho
 [screenshot4_thumb]: http://dl.dropbox.com/u/2111839/Permanent/MWPhotoBrowser/mwphotobrowser4_thumb.png
 [screenshot4]: http://dl.dropbox.com/u/2111839/Permanent/MWPhotoBrowser/mwphotobrowser4.png
 
+## Fork note:
+
+This fork is the non arc version of the library and only depend on SDWebImage. I will try to remove SDWebImage from the dependency in the future for portability.
 
 ## Usage
 
@@ -102,9 +108,6 @@ Setting these things up in Xcode 4 can be a bit tricky so if you run into any pr
 ### Method 2: Including Source Directly Into Your Project
 
 Another method is to simply add the files to your Xcode project, copying them to your project's directory if required. Ensure that all the code within `MWPhotoBrowser/Classes`, `MWPhotoBrowser/Libraries` and the `MWPhotoBrowser.bundle` is included in your project. 
-
-If your project uses ARC then you will have to disable ARC for each of the files in MWPhotoBrowser. Here's how you do it: http://stackoverflow.com/a/6658549/106244
-
 
 ## Outstanding issues and improvements
 
